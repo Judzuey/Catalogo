@@ -1,0 +1,283 @@
+:root {
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+    --primario: #784D3C;
+    --gris: #686D76;
+    --grisBajo: #EEEEEE;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1 rem = 10px */
+    height: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    line-height: 2;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor {
+    width: min(90%, 120rem);
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuenteHeading);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+h4 {
+    font-size: 2.8rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.centrar-texto {
+    text-align: center;
+}
+
+.header {
+    background-image: url('../img/banner.jpg');
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.75);
+    margin-bottom: 20px;
+    height: 60rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.header__texto h2 {
+    font-size: 36px;
+    margin: 0;
+    color: white;
+    font-weight: bold;
+}
+
+.header__texto p {
+    font-size: 18px;
+    color: white;
+    margin-top: 10px;
+    max-width: 800px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .header__texto {
+        margin-top: 15rem;
+    }
+
+    .barra {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navegacion {
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+.logo {
+    color: var(--blanco);
+}
+
+.logo__nombre {
+    font-weight: 400;
+}
+
+.logo__bold {
+    font-weight: 700;
+}
+
+.navegacion__enlace {
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--blanco);
+}
+
+.carousel-container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    flex: 1;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.carousel-item img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.carousel-item-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carousel-item h2 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+}
+
+.carousel-item p {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-buttons button {
+    background-color: var(--primario);
+    color: var(--blanco);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+
+.carousel-buttons button:hover {
+    background-color: var(--gris);
+    transform: scale(1.1);
+}
+
+.carousel-buttons button:focus {
+    outline: none;
+}
+
+.carousel-buttons button:before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-top: 3px solid var(--blanco);
+    border-right: 3px solid var (--blanco);
+}
+
+#prev:before {
+    transform: rotate(-135deg);
+}
+
+#next:before {
+    transform: rotate(45deg);
+}
+
+@media (min-width: 768px) {
+    .carousel-item {
+        flex-direction: row;
+    }
+
+    .carousel-item img {
+        width: 40%;
+        margin-right: 20px;
+    }
+
+    .carousel-item-content {
+        width: 60%;
+    }
+}
+
+.footer {
+    background-color: var(--primario);
+    color: var(--blanco);
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.footer__texto {
+    margin: 0;
+    font-size: 1.4rem;
+}
